@@ -1,0 +1,59 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>About Us – High End Systems</title><link rel='stylesheet' href='styles.css'><script defer src='prefs.js'></script></head><body>
+<header class="header">
+  <div class="container">
+    <nav>
+      <a class="logo" href="index.html" aria-label="High End Systems">
+        <img src="logo-temp.svg" alt="" aria-hidden="true"><span>High End Systems</span>
+      </a>
+      <div class="menu">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="about.html" id="nav-about">About Us</a>
+        <a href="contact.html" id="nav-contact">Contact Us</a>
+        <button id="prefs-trigger" class="btn secondary" type="button">Display & personalisation</button>
+        <a href="contact.html" class="btn">Get support</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class='container'><section class='hero'><div><h1>About High End Systems</h1><p>We’ve supported Australian businesses for over a decade. This page respects your display preferences, including theme and font size.</p></div><div class='panel'><h2>Mission & Vision</h2><p><strong>Mission:</strong> Deliver reliable, human-centred IT services.</p><p><strong>Vision:</strong> Empower organisations with secure, scalable technology.</p><p class='muted'>Hello <span data-user-name></span> — your preferred office is <strong data-user-office></strong>.</p></div></section><section><h2>Where we operate</h2><p>Sydney · Melbourne · Brisbane · Perth · Darwin</p></section></main>
+<div id="prefs" class="" role="dialog" aria-label="Display & personalization settings">
+  <h3>Display & personalization</h3>
+  <div class="prefs-row">
+    <label for="p-theme">Theme</label>
+    <select id="p-theme" class="select">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </div>
+  <div class="prefs-row">
+    <label for="p-font">Font size <small>(87–125%)</small></label>
+    <input id="p-font" type="range" min="87" max="125" value="100">
+  </div>
+  <div class="prefs-row">
+    <label><input id="p-contrast" type="checkbox"> High contrast</label>
+    <label><input id="p-motion" type="checkbox"> Reduce motion</label>
+  </div>
+  <hr>
+  <div class="prefs-row">
+    <label for="p-name">Your name (personal greeting)</label>
+    <input id="p-name" class="select" placeholder="e.g., Taylor">
+  </div>
+  <div class="prefs-row">
+    <label for="p-office">Preferred office</label>
+    <select id="p-office" class="select">
+      <option value="">None</option>
+      <option>Sydney</option><option>Melbourne</option><option>Brisbane</option><option>Perth</option><option>Darwin</option>
+    </select>
+  </div>
+  <small>Settings are saved on this device. When accounts are enabled, they’ll sync to your profile.</small>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span class="badge">WCAG 2.2 AA-minded</span>
+    <span class="badge">Performance first</span>
+    <span class="badge">Privacy-respectful</span>
+  </div>
+</footer>
+<script>document.getElementById('nav-about').classList.add('active');</script></body></html>

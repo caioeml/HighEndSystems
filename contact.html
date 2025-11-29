@@ -1,0 +1,59 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Contact Us – High End Systems</title><link rel='stylesheet' href='styles.css'><script defer src='prefs.js'></script></head><body>
+<header class="header">
+  <div class="container">
+    <nav>
+      <a class="logo" href="index.html" aria-label="High End Systems">
+        <img src="logo-temp.svg" alt="" aria-hidden="true"><span>High End Systems</span>
+      </a>
+      <div class="menu">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="about.html" id="nav-about">About Us</a>
+        <a href="contact.html" id="nav-contact">Contact Us</a>
+        <button id="prefs-trigger" class="btn secondary" type="button">Display & personalisation</button>
+        <a href="contact.html" class="btn">Get support</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main class='container'><section class='hero'><div><h1>Get in touch</h1><p>Hi <span data-user-name></span>, choose your nearest office or let your saved preference prefill the form.</p><div class='panel'><form id='contact' novalidate><div style='display:grid;gap:12px;grid-template-columns:1fr 1fr'><div><label for='name'>Name</label><input id='name' required class='select' placeholder='Full name'></div><div><label for='email'>Email</label><input id='email' type='email' required class='select' placeholder='you@example.com'></div></div><div style='display:grid;gap:12px;grid-template-columns:1fr 1fr;margin-top:12px'><div><label for='officeSelect'>Nearest office</label><select id='officeSelect' class='select' required><option value=''>Select…</option><option>Sydney</option><option>Melbourne</option><option>Brisbane</option><option>Perth</option><option>Darwin</option></select><small>Prefilled from your preference when available.</small></div><div><label for='phone'>Phone (optional)</label><input id='phone' class='select' placeholder='+61 …'></div></div><div style='margin-top:12px'><label for='msg'>Message</label><textarea id='msg' rows='5' class='select' placeholder='How can we help?' required></textarea></div><div style='display:flex;gap:10px;margin-top:14px'><button class='btn' type='submit'>Send enquiry</button><button class='btn secondary' type='button' id='savePrefs'>Save name & office</button></div><div class='alert' id='ok'>Thanks—message sent.</div></form></div></div><div class='panel'><h2>Our offices</h2><p>We’ll route you to <strong data-user-office></strong>.</p><div class='cards' style='grid-template-columns:1fr'><div class='card'><h3>Sydney</h3><p>Level 10, Example Tower</p></div><div class='card'><h3>Melbourne</h3><p>120 Collins St</p></div><div class='card'><h3>Brisbane</h3><p>South Bank</p></div><div class='card'><h3>Perth</h3><p>St Georges Tce</p></div><div class='card'><h3>Darwin</h3><p>Smith St</p></div></div></div></section></main>
+<div id="prefs" class="" role="dialog" aria-label="Display & personalization settings">
+  <h3>Display & personalization</h3>
+  <div class="prefs-row">
+    <label for="p-theme">Theme</label>
+    <select id="p-theme" class="select">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </div>
+  <div class="prefs-row">
+    <label for="p-font">Font size <small>(87–125%)</small></label>
+    <input id="p-font" type="range" min="87" max="125" value="100">
+  </div>
+  <div class="prefs-row">
+    <label><input id="p-contrast" type="checkbox"> High contrast</label>
+    <label><input id="p-motion" type="checkbox"> Reduce motion</label>
+  </div>
+  <hr>
+  <div class="prefs-row">
+    <label for="p-name">Your name (personal greeting)</label>
+    <input id="p-name" class="select" placeholder="e.g., Taylor">
+  </div>
+  <div class="prefs-row">
+    <label for="p-office">Preferred office</label>
+    <select id="p-office" class="select">
+      <option value="">None</option>
+      <option>Sydney</option><option>Melbourne</option><option>Brisbane</option><option>Perth</option><option>Darwin</option>
+    </select>
+  </div>
+  <small>Settings are saved on this device. When accounts are enabled, they’ll sync to your profile.</small>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <span class="badge">WCAG 2.2 AA-minded</span>
+    <span class="badge">Performance first</span>
+    <span class="badge">Privacy-respectful</span>
+  </div>
+</footer>
+<script>document.getElementById('nav-contact').classList.add('active');var form=document.getElementById('contact');var ok=document.getElementById('ok');form.addEventListener('submit',function(e){e.preventDefault();ok.classList.remove('show');var name=document.getElementById('name');var email=document.getElementById('email');var office=document.getElementById('officeSelect');var msg=document.getElementById('msg');if(!name.value.trim()||!/\S+@\S+\.\S+/.test(email.value)||!office.value||!msg.value.trim()){alert('Please complete all required fields with valid information.');return;}form.reset();ok.classList.add('show');});document.getElementById('savePrefs').addEventListener('click',function(){var KEY='hes_prefs';var prefs=JSON.parse(localStorage.getItem(KEY)||'{}');prefs.name=document.getElementById('name').value.trim();prefs.preferredOffice=document.getElementById('officeSelect').value;localStorage.setItem(KEY,JSON.stringify(prefs));alert('Saved! Your name and preferred office will personalise the site.');location.reload();});</script></body></html>
