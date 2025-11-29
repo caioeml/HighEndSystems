@@ -54,6 +54,7 @@ A aplicação é leve, responsiva e construída com foco em acessibilidade e per
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repo.git
 
+```
 2. Abrir o projeto
 
 Basta abrir o arquivo index.html no navegador.
